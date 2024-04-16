@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Diagnostic Tool</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .results { margin-top: 20px; }
+        .result { margin-bottom: 20px; padding: 10px; border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <h1>Medical Diagnostic Tool</h1>
+    <form id="symptoms-form">
+        <input type="text" id="symptoms" name="symptoms" placeholder="Enter symptoms separated by commas" required>
+        <button type="submit">Diagnose</button>
+    </form>
+
+    <div id="results"></div>
+
+    <script>
+        document.getElementById('symptoms-form').onsubmit = function(event) {
+            event.preventDefault();  // Prevent the form from submitting in the traditional way
+            const symptoms = document.getElementById('symptoms').value;
+            
+            fetch('/diagnose', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ "symptoms": symptoms.split(', ') })
+            })
+            .then(response => response.json())
+            .then(data => {
+                const resultsDiv = document.getElementById('results');
+                resultsDiv.innerHTML = '';  // Clear previous results
+                data.forEach(item => {
+                    const div = document.createElement('div');
+                    div.className = 'result';
+                    div.innerHTML = `<h3>${item.disease}</h3><p>${item.description}</p>`;
+                    const ul = document.createElement('ul');
+                    for (const key in item.precautions) {
+                        if (key !== 'Disease') {
+                            const li = document.createElement('li');
+                            li.textContent = item.precautions[key];
+                            ul.appendChild(li);
+                        }
+                    }
+                    div.appendChild(ul);
+                    resultsDiv.appendChild(div);
+                });
+            })
+            .catch(error => console.error('Error:', error));
+        };
+    </script>
+</body>
+</html>

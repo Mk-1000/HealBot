@@ -1,0 +1,27 @@
+### 1. Respiratory Conditions
+- **Symptoms**: coughing, shortness of breath, wheezing
+- **Common Ailments**: Asthma, Bronchitis, Common Cold
+
+### 2. Digestive Issues
+- **Symptoms**: stomach pain, nausea, vomiting, diarrhea
+- **Common Ailments**: Food Poisoning, Gastroenteritis, Irritable Bowel Syndrome (IBS)
+
+### 3. Skin Related Issues
+- **Symptoms**: skin rash, itching, redness, blister
+- **Common Ailments**: Eczema, Psoriasis, Allergic Reaction
+
+### 4. Neurological Symptoms
+- **Symptoms**: headache, dizziness, numbness, tingling sensation
+- **Common Ailments**: Migraine, Stroke, Multiple Sclerosis
+
+### 5. General Infections
+- **Symptoms**: fever, fatigue, body aches, sore throat
+- **Common Ailments**: Influenza, Mononucleosis, COVID-19
+
+### 6. Cardiovascular Issues
+- **Symptoms**: chest pain, palpitations, shortness of breath, swelling of legs
+- **Common Ailments**: Heart Attack, Heart Failure, Hypertension
+
+### 7. Endocrine Disorders
+- **Symptoms**: excessive thirst, frequent urination, fatigue, weight loss
+- **Common Ailments**: Diabetes, Hyperthyroidism, Hypothyroidism
