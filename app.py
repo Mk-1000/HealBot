@@ -104,10 +104,12 @@ def search():
             return jsonify({'message': 'No matching medicines found.'})
     return render_template('search.html')
 
+# Route to fetch all medicines
 @app.route('/medicines', methods=['GET'])
 def get_medicines():
-    medicine_names = medicines_df['name'].tolist()
-    return jsonify(medicine_names)
+    medicines_df = load_medicine_data()
+    medicines_list = medicines_df.to_dict(orient='records')
+    return jsonify(medicines_list)
 
 if __name__ == '__main__':
     app.run(debug=True)
